@@ -46,5 +46,4 @@ for (let i = 0; i < hover.length; i++){
         //alert('test');
 
     })
-}/*
-
+}*/

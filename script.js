@@ -1,23 +1,32 @@
 const container = document.querySelector('#gridContainer');
+let fieldSize = 16;
 
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', () => {
+    fieldSize = prompt("Give field size (lower than 100)");
+    console.log(fieldSize);
+    container.innerHTML='';
+    if(fieldSize < 100){
+    createGrid(fieldSize);
+    }
+})
+
+function createGrid(fieldSize) {
 divs:
-for (let i = 1; i < 17; i++){
+for (let i = 1; i <= fieldSize ; i++){
     let row = document.createElement('div');
     row.className = 'row';
     container.appendChild(row);
-    row.textContent = `row : `;
+    //row.textContent = `row : `;
 
-    for (let j = 0; j < 16; j++){
+    for (let j = 0; j < fieldSize; j++){
         let column = document.createElement('div');
         column.className = 'column';
         row.appendChild(column);
-        column.textContent = `${j}`;
+        //column.textContent = `${j}`;
 
     }
 }
-
-
-
 let hover = document.getElementsByClassName('column');
 for (let i = 0; i < hover.length; i++){
     hover[i].addEventListener('mouseover', function (){
@@ -26,4 +35,16 @@ for (let i = 0; i < hover.length; i++){
 
     })
 }
+};
+
+
+
+/*let hover = document.getElementsByClassName('column');
+for (let i = 0; i < hover.length; i++){
+    hover[i].addEventListener('mouseover', function (){
+        hover[i].classList.add('hover');
+        //alert('test');
+
+    })
+}/*
 

@@ -11,6 +11,8 @@ btn.addEventListener('click', () => {
     }
 })
 
+createGrid(16);
+
 function createGrid(fieldSize) {
 divs:
 for (let i = 1; i <= fieldSize ; i++){
@@ -36,6 +38,7 @@ for (let i = 0; i < hover.length; i++){
     })
 }
 };
+
 
 
 
